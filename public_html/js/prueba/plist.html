@@ -150,7 +150,7 @@ THE SOFTWARE.
                                     <table class="table table-responsive table-bordered table-hover table-striped table-condensed dataTable no-footer">
                                         <thead plistheader></thead>
                                         <tbody>
-                                            <tr ng-repeat="obj in page | filter:searchText">
+                                            <tr ng-repeat="obj in page| filter:searchText">
                                                 <td ng-repeat="f in fields" ng-show="f.visible"  class="text-right">
                                                     <div ng-show="f.visible && f.type == 'id'"><b>{{obj[f.name]}}</b></div>
                                                     <div ng-show="f.visible && f.type == 'textarea'" class="text-left">{{obj[f.name]|clipString}}</div>
@@ -178,6 +178,9 @@ THE SOFTWARE.
                                                             </a>
                                                             <a class="btn btn-default btn-xs" ng-click="pop(obj.id, 'prueba', 'PruebaRemovepopController', 'removepop')">
                                                                 <span class="glyphicon glyphicon-remove"></span>
+                                                            </a>
+                                                            <a class="btn btn-default btn-xs" href="imagen/plist/1/10?sfilter=and,id_prueba,equa,{{obj.id}}">
+                                                                <span class="glyphicon glyphicon-picture"></span>
                                                             </a>
                                                         </div>
                                                     </div>
