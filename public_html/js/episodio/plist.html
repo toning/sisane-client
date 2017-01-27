@@ -150,7 +150,7 @@ THE SOFTWARE.
                                     <table class="table table-responsive table-bordered table-hover table-striped table-condensed dataTable no-footer">                                
                                         <thead plistheader></thead>
                                         <tbody>
-                                            <tr ng-repeat="obj in page | filter:searchText">
+                                            <tr ng-repeat="obj in page| filter:searchText">
                                                 <td ng-repeat="f in fields" ng-show="f.visible"  class="text-right">
                                                     <div ng-show="f.visible && f.type == 'id'"><b>{{obj[f.name]}}</b></div>
                                                     <div ng-show="f.visible && f.type == 'date'" class="text-center">{{obj[f.name]}}</div>
@@ -171,25 +171,32 @@ THE SOFTWARE.
                                                 <td>
                                                     <div class="btn-toolbar" role="toolbar">
                                                         <div class="btn-group">
-                                                            
-                                                              <actions
+
+                                                            <actions
                                                                 id="obj.id"
-                                                                 name="ob"
-                                                              >                                                                  
+                                                                name="ob"
+                                                                >                                                                  
                                                             </actions>
-                                                       
-                                                             <div ng-repeat="t in fields" ng-show="t.type == 'specific'" class="btn-group">
-                                                            <bf-key
-                                                               name="ob"
-                                                               reference="t.reference"
-                                                               bean="obj"
-                                                               fname="t.longname"                                                                                                                              
-                                                               
-                                                            >
-                                                            </bf-key>
+
+                                                            <div ng-repeat="t in fields" ng-show="t.type == 'specific'" class="btn-group">
+                                                                <bf-key
+                                                                    name="ob"
+                                                                    reference="t.reference"
+                                                                    bean="obj"
+                                                                    fname="t.longname"                                                                                                                              
+
+                                                                    >
+                                                                </bf-key>
+
                                                             </div>
-                                                            
+
                                                         </div>
+                                                        <a class="btn btn-default btn-xs" href="prueba/plist/1/10?sfilter=and,id_episodio,equa,{{obj.id}}">
+                                                            <span class="glyphicon glyphicon-alert"></span>
+                                                        </a>
+                                                        <a class="btn btn-default btn-xs" href="analitica/plist/1/10?sfilter=and,id_episodio,equa,{{obj.id}}">
+                                                            <span class="glyphicon glyphicon-heart"></span>
+                                                        </a>
                                                     </div>
                                                 </td>
                                             </tr>                                   
